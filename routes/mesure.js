@@ -18,4 +18,26 @@ router.put('/', measure.create);
 /* GET measure listing. */
 router.get('/', measure.findAll);
 
+/* GET  pourcentage humidity*/
+router.get('/hum', (req, res) => {
+    measure.humidity(req, res);
+    
+});
+
+/* GET  pourcentage humidity*/
+router.get('/pol', (req, res) => {
+    measure.pollution(req, res);
+    
+});
+
+/* GET  pourcentage humidity*/
+router.get('/temp', (req, res) => {
+    measure.temperature(req, res);
+    
+});
+
+router.get('/moytemp', (req, res) => {
+    measure.moyennetemperature(req, res);
+    
+});
 module.exports = router;

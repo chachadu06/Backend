@@ -4,10 +4,10 @@ var _ = require('lodash');
 var user = require('../controllers/user.controller');
 
 /* GET one user */
-router.get('/:userId', (req, res) => {
-    user.findOne(req, res);
+// router.get('/:userId', (req, res) => {
+//     user.findOne(req, res);
     
-});
+// });
 
 
 /* DELETE  one user */
@@ -33,5 +33,43 @@ router.get('/', (req, res) => {
     user.findAll(req, res);
     
 });
+
+router.get('/russia', (req, res) => {
+    user.urussia(req, res);
+    
+});
+
+router.get('/poland', (req, res) => {
+    user.upoland(req, res);
+    
+});
+
+router.get('/china', (req, res) => {
+    user.uchina(req, res);
+    
+});
+
+router.get('/italy', (req, res) => {
+    user.uitaly(req, res);
+    
+});
+
+router.get('/greece', (req, res) => {
+    user.ugreece(req, res);
+    
+});
+
+router.get('/mexico', (req, res) => {
+    user.umexico(req, res);
+    
+});
+
+router.get('/ecuador', (req, res) => {
+    user.uecuador(req, res);
+    
+});
+
+
+
 
 module.exports = router;

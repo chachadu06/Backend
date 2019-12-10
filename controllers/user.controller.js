@@ -150,3 +150,106 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+// nombre d'utilisateur en china
+exports.uchina = (req, res) => {
+  
+  User.find({"location": "china"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+
+// nombre d'utilisateur en russia
+exports.urussia = (req, res) => {
+  
+  User.find({"location": "russia"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+// nombre d'utilisateur en poland
+exports.upoland = (req, res) => {
+  
+  User.find({"location": "poland"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+// nombre d'utilisateur en italy
+exports.uitaly = (req, res) => {
+  
+  User.find({"location": "italy"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+
+// nombre d'utilisateur en greece
+exports.ugreece = (req, res) => {
+  
+  User.find({"location": "greece"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+
+// nombre d'utilisateur en ecuador
+exports.uecuador = (req, res) => {
+  
+  User.find({"location": "ecuador"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};
+
+// nombre d'utilisateur au mexique
+exports.umexico = (req, res) => {
+  
+  User.find({"location": "mexico"}).count()
+    .then(User => {
+      
+      res.status(200).json({User});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving users.'
+      });
+    });
+};

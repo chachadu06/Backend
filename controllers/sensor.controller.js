@@ -27,9 +27,7 @@ exports.create = (req, res) => {
   }
 
   if (!req.body.location) {
-    // If firstName is not present in body reject the request by
-    // sending the appropriate http code
-    return res.status(400).send({
+      return res.status(400).send({
       message: 'location can not be empty'
     });
   }
@@ -42,14 +40,14 @@ exports.create = (req, res) => {
     });
   }
 
-  // Create a new User
+  // Create a new sensor
   const Sensor = new Sensor({
     creationDate: req.body.creationDate,
     location: req.body.location,
     userID : req.body.userID
     });
 
-  // Save User in the database
+  // Save sensor in the database
   Sensor
     .save()
     .then(data => {

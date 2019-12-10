@@ -1,5 +1,5 @@
 const Measure = require('../models/measure.model.js');
-
+const Measure1 = require('../models/measure.model.js');
 // Retrieve and return all measure from the database.
 exports.findAll = (req, res) => {
   Measure.find()
@@ -73,3 +73,67 @@ exports.create = (req, res) => {
       });
     });
 }; 
+
+//trouver le nb d'humide
+exports.humidity = (req, res) => {
+  Measure.find({"type": "humidity"}).count()
+    .then(Measure => {
+      
+      res.status(200).json({Measure});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving sensor.'
+      });
+    });
+    
+};
+
+//trouver le nb airpollution
+exports.pollution = (req, res) => {
+  Measure.find({"type": "airPollution"}).count()
+    .then(Measure => {
+      
+      res.status(200).json({Measure});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving sensor.'
+      });
+    });
+    
+};
+
+//trouver le nb temperature
+exports.temperature = (req, res) => {
+  Measure.find({"type": "temperature"}).count()
+    .then(Measure => {
+      
+      res.status(200).json({Measure});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving sensor.'
+      });
+    });
+    
+};
+
+exports.moyennetemperature = (req, res) => {
+  Measure.find({"type": "temperature"},{"value":1,"_id":0})
+    .then(Measure => {
+      let compteur=0;
+      Measure.forEach(element =>{
+          compteur+=element.value;
+
+      })
+      const moyenne=compteur/Measure.length;
+      res.status(200).json({moyenne});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while retrieving sensor.'
+      });
+    });
+    
+};

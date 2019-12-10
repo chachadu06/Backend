@@ -16,12 +16,7 @@ const dbURL = `mongodb://localhost:27017/${dbName}`;
 mongoose.connect(dbURL, {
     useNewUrlParser: true
     }); 
-
-
-
-
-
-
+    
 const usersRouter = require("./routes/user");
 const sensorsRouter = require("./routes/sensor");
 const measuresRouter = require("./routes/mesure");
